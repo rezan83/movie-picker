@@ -33,9 +33,7 @@ function App(): JSX.Element {
         });
     }
     function addToggle(ep: IEpisode): IAction {
-        let alreadyFav = state.favorites.find(
-            (fav: IEpisode) => fav.id === ep.id
-        );
+        let alreadyFav = state.favorites.includes(ep)
 
         if (alreadyFav) {
             return dispatch({
